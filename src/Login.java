@@ -62,10 +62,12 @@ public class Login extends HttpServlet {
 
             if(resultSet.next()){
 
+                final String name = resultSet.getString("name");
+
                 statement.close();
                 con.close();
 
-                return resultSet.getString("name");
+                return name;
 
             }
 
