@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <html>
 <head>
     <title>Login</title>
@@ -14,6 +16,9 @@
 <body>
     
     <main class="card-view container">
+        <c:if test="${requestScope.error}">
+            <h1>ERROR!!!</h1>
+        </c:if>
         <form action="./login" method="post">
             <input type="text" name="user" placeholder="Usuario..."><br>
             <input type="password" name="pswd" placeholder="Contraseña"><br>
@@ -26,7 +31,11 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 <style>
-    
+
+    h1{
+        color:red;
+    }
+
     .card-view{
         margin-top: 30px;
         text-align: center;
